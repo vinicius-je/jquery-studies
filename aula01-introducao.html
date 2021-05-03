@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+    
+    <h1 class="titulo">Esse é um título H1</h1>
+
+    <h1>Outro título</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // evita conflito com outros frameworks que utilizam o símbolo ($)
+        // substítui ($) por jQuery
+        $.noConflict();
+        jQuery(".titulo").hide();
+
+        setTimeout(()=>{
+            jQuery(".titulo").show();
+        },2000)
+
+        // Usando o javascript vanilla
+        document.querySelectorAll(".titulo")
+            .forEach(elemento => {
+                elemento.style.display="none"
+            })
+
+        setTimeout(()=>{
+            document.querySelectorAll(".titulo")
+            .forEach(elemento => {
+                elemento.style.display="block"
+            })
+        }, 2000);
+    </script>
+</body>
+</html>
